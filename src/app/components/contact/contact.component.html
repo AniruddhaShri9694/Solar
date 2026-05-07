@@ -1,0 +1,82 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Get In Touch</h2>
+      <p>Let's start a conversation about your solar energy needs</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-info fade-in">
+        <div class="info-card">
+          <div class="info-icon">📧</div>
+          <h3>Email</h3>
+          <p>{{ email }}</p>
+          <button class="contact-btn" (click)="openEmail()">Send Email</button>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📱</div>
+          <h3>Phone</h3>
+          <p>{{ phone }}</p>
+          <button class="contact-btn" (click)="makeCall()">Call Now</button>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">🌐</div>
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form fade-in-down" (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            [(ngModel)]="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email-input">Your Email</label>
+          <input
+            type="email"
+            id="email-input"
+            [(ngModel)]="contactEmail"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            [(ngModel)]="message"
+            name="message"
+            placeholder="Tell us about your solar energy needs..."
+            rows="5"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn submit-btn" [disabled]="!name || !contactEmail || !message">
+          Send Message
+        </button>
+
+        <div *ngIf="submitted" class="success-message">
+          ✓ Message sent! We'll get back to you soon.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
