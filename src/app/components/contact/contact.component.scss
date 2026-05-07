@@ -48,13 +48,17 @@
 }
 
 .contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 3rem;
   align-items: center;
 
+  @media (max-width: 1024px) {
+    gap: 2rem;
+  }
+
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
   }
 }
@@ -63,6 +67,12 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  flex: 1;
+  min-width: 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .info-card {
@@ -73,6 +83,8 @@
   text-align: center;
   transition: all 0.3s ease;
   border-left: 4px solid transparent;
+  position: relative;
+  z-index: 1;
 
   &:hover {
     transform: translateY(-5px);
@@ -119,7 +131,15 @@
 .social-links {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    gap: 0.75rem;
+  }
 }
 
 .social-link {
@@ -128,10 +148,41 @@
   font-weight: 500;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  touch-action: manipulation;
+  min-height: 44px;
+  min-width: 44px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: auto;
+  position: relative;
+  z-index: 11;
+  background: transparent;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     color: #0047ab;
     transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 1.75rem;
+    font-size: 1.05rem;
+    min-height: 48px;
+    min-width: 48px;
+    background: rgba(30, 144, 255, 0.05);
+    border-radius: 0.5rem;
   }
 }
 
@@ -140,6 +191,19 @@
   padding: 2.5rem;
   border-radius: 1rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 1024px) {
+    padding: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1.5rem;
+  }
 }
 
 .form-group {
@@ -211,7 +275,19 @@
 }
 
 @media (max-width: 768px) {
-  .contact-form {
-    padding: 1.5rem;
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 1rem 0.75rem;
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    padding: 0.875rem;
+    font-size: 0.95rem;
+    min-height: 44px;
   }
 }

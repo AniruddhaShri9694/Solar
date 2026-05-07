@@ -56,4 +56,8 @@ export class ContactComponent {
     const gmailUrl = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${this.email}&su=${encodeURIComponent(subject)}`;
     window.open(gmailUrl, '_blank');
   }
+
+  openInstagram(): void {
+    window.open('https://www.instagram.com/sion_energy_solar/', '_blank');
+  }
 }
