@@ -35,7 +35,7 @@
       transform: translateX(-50%);
       width: 100px;
       height: 3px;
-      background: linear-gradient(135deg, #b8860b, #8b6914);
+      background: linear-gradient(135deg, #1e90ff, #0047ab);
       border-radius: 2px;
     }
   }
@@ -76,8 +76,8 @@
 
   &:hover {
     transform: translateY(-5px);
-    border-left-color: #b8860b;
-    box-shadow: 0 10px 30px rgba(184, 134, 11, 0.15);
+    border-left-color: #1e90ff;
+    box-shadow: 0 10px 30px rgba(30, 144, 255, 0.15);
   }
 
   .info-icon {
@@ -101,7 +101,7 @@
 
 .contact-btn {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #b8860b, #8b6914);
+  background: linear-gradient(135deg, #1e90ff, #0047ab);
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -123,14 +123,14 @@
 }
 
 .social-link {
-  color: #b8860b;
+  color: #1e90ff;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
   transition: all 0.3s ease;
 
   &:hover {
-    color: #8b6914;
+    color: #0047ab;
     transform: translateY(-2px);
   }
 }
@@ -166,8 +166,8 @@
 
     &:focus {
       outline: none;
-      border-color: #b8860b;
-      box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+      border-color: #1e90ff;
+      box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.1);
     }
 
     &::placeholder {

@@ -36,7 +36,7 @@
       transform: translateX(-50%);
       width: 100px;
       height: 3px;
-      background: linear-gradient(135deg, #b8860b, #8b6914);
+      background: linear-gradient(135deg, #1e90ff, #0047ab);
       border-radius: 2px;
     }
   }
@@ -83,12 +83,12 @@
 }
 
 .stat-card {
-  background: linear-gradient(135deg, #b8860b, #8b6914);
+  background: linear-gradient(135deg, #1e90ff, #0047ab);
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
   color: white;
-  box-shadow: 0 5px 20px rgba(184, 134, 11, 0.2);
+  box-shadow: 0 5px 20px rgba(30, 144, 255, 0.2);
   transition: all 0.3s ease;
   cursor: pointer;
 
@@ -155,7 +155,7 @@
 
 .skill-percentage {
   font-weight: 700;
-  color: #b8860b;
+  color: #1e90ff;
   font-size: 0.9rem;
 }
 
@@ -169,8 +169,8 @@
 
 .skill-progress {
   height: 100%;
-  background: linear-gradient(90deg, #b8860b, #8b6914);
+  background: linear-gradient(90deg, #1e90ff, #0047ab);
   border-radius: 3px;
   animation: slideInRight 0.8s ease-out;
-  box-shadow: 0 0 10px rgba(184, 134, 11, 0.4);
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.4);
 }

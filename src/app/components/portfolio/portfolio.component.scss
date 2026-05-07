@@ -35,7 +35,7 @@
       transform: translateX(-50%);
       width: 100px;
       height: 3px;
-      background: linear-gradient(135deg, #b8860b, #8b6914);
+      background: linear-gradient(135deg, #1e90ff, #0047ab);
       border-radius: 2px;
     }
   }
@@ -73,9 +73,9 @@
 
   &:hover,
   &.active {
-    background: linear-gradient(135deg, #b8860b, #8b6914);
+    background: linear-gradient(135deg, #1e90ff, #0047ab);
     color: white;
-    border-color: #b8860b;
+    border-color: #1e90ff;
     transform: translateY(-2px);
   }
 
@@ -163,7 +163,7 @@
 
   .category {
     display: inline-block;
-    background: linear-gradient(135deg, #b8860b, #8b6914);
+    background: linear-gradient(135deg, #1e90ff, #0047ab);
     color: white;
     padding: 0.4rem 1rem;
     border-radius: 50px;
@@ -189,7 +189,7 @@
 }
 
 .card-link {
-  color: #b8860b;
+  color: #1e90ff;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;

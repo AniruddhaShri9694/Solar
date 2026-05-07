@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  email = 'contact@sionenergy.com';
-  phone = '+91'; // Country code
+  email = 'gauravmali@sionenergy.in';
+  phone = '+917030469277';
   
   name = '';
   contactEmail = '';

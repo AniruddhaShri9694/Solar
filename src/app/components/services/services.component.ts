@@ -20,21 +20,21 @@ export class ServicesComponent {
       title: 'Commercial Solar',
       description: 'Large-scale solar systems for businesses and industries. Reduce operational costs significantly.'
     },
-    {
-      icon: '📦',
-      title: 'Battery Storage',
-      description: 'Advanced battery storage solutions to store excess solar energy for 24/7 power availability.'
-    },
+    // {
+    //   icon: '📦',
+    //   title: 'Battery Storage',
+    //   description: 'Advanced battery storage solutions to store excess solar energy for 24/7 power availability.'
+    // },
     {
       icon: '🔧',
       title: 'Installation & Setup',
       description: 'Professional installation with complete subsidy support and paperwork assistance.'
     },
-    {
-      icon: '📱',
-      title: 'Monitoring App',
-      description: 'Real-time monitoring dashboard to track your solar system performance and energy savings.'
-    },
+    // {
+    //   icon: '📱',
+    //   title: 'Monitoring App',
+    //   description: 'Real-time monitoring dashboard to track your solar system performance and energy savings.'
+    // },
     {
       icon: '🛠️',
       title: 'Maintenance & Support',
