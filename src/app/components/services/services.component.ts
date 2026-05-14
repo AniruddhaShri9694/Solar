@@ -11,34 +11,34 @@ import { CommonModule } from '@angular/common';
 export class ServicesComponent {
   services = [
     {
-      icon: '�',
-      title: 'Residential Solar',
-      description: 'Complete rooftop solar solutions for homes. Save up to 90% on electricity bills with our proven installations.'
+      icon: '🔍',
+      title: 'Free Site Visit & Roof Analysis',
+      description: 'Our expert team visits your location and checks rooftop space, shadow area, and power usage to design the best solar solution for maximum savings.'
     },
     {
-      icon: '🏢',
-      title: 'Commercial Solar',
-      description: 'Large-scale solar systems for businesses and industries. Reduce operational costs significantly.'
+      icon: '🎨',
+      title: 'Customized 3D Solar Design',
+      description: 'Get a professional 3D solar layout so you can clearly understand panel placement, structure design, and expected generation before installation.'
     },
-    // {
-    //   icon: '📦',
-    //   title: 'Battery Storage',
-    //   description: 'Advanced battery storage solutions to store excess solar energy for 24/7 power availability.'
-    // },
-    {
-      icon: '🔧',
-      title: 'Installation & Setup',
-      description: 'Professional installation with complete subsidy support and paperwork assistance.'
-    },
-    // {
-    //   icon: '📱',
-    //   title: 'Monitoring App',
-    //   description: 'Real-time monitoring dashboard to track your solar system performance and energy savings.'
-    // },
     {
       icon: '🛠️',
-      title: 'Maintenance & Support',
-      description: 'Regular maintenance and proactive after-sales service for optimal system performance.'
+      title: 'Easy Installation & Subsidy Assistance',
+      description: 'We handle complete solar installation, net meter process, and government subsidy documentation for a smooth and hassle-free experience.'
+    },
+    {
+      icon: '💰',
+      title: 'High Savings & Reliable Performance',
+      description: 'Start reducing your electricity bill from day one with high-efficiency solar systems designed for long-term performance and durability.'
+    },
+    {
+      icon: '🔧',
+      title: 'Maintenance & Customer Support',
+      description: 'Our support team provides regular maintenance guidance and quick service support to keep your solar system running efficiently.'
+    },
+    {
+      icon: '⭐',
+      title: 'Trusted Solar Partner',
+      description: 'Quality products, professional installation, transparent pricing, and customer satisfaction make Sion Energy a trusted choice for solar solutions.'
     }
   ];
 }

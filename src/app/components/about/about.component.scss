@@ -50,7 +50,7 @@
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 4rem;
   margin-bottom: 4rem;
   align-items: center;
@@ -117,6 +117,36 @@
     margin-bottom: 2.5rem;
     color: #1a1a1a;
   }
+
+  .section-header {
+    margin-bottom: 3rem;
+
+    h2 {
+    font-size: 2.8rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(135deg, #1e90ff, #0047ab);
+      border-radius: 2px;
+    }
+  }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 1.5rem;
+    }
+  }
 }
 
 .skills-grid {
@@ -173,4 +203,44 @@
   border-radius: 3px;
   animation: slideInRight 0.8s ease-out;
   box-shadow: 0 0 10px rgba(30, 144, 255, 0.4);
+}
+
+.offering-card {
+  background: #f8f9fa;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(30, 144, 255, 0.15);
+    border-color: #1e90ff;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    margin: 1rem 0 0.75rem 0;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.offering-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
 }

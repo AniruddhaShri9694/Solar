@@ -6,6 +6,31 @@
   background: linear-gradient(135deg, #f8f9fa 0%, #e8f0f5 100%);
   position: relative;
   overflow: hidden;
+  background-image: url('/assets/images/a.png');
+  background-size: cover;
+
+   min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Background */
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url('/assets/images/a.png');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+
+  /* Better responsiveness */
+  padding: 60px 20px;
 
   &::before {
     content: '';
@@ -73,11 +98,11 @@
   }
 
   .description {
-    font-size: 1.1rem;
-    color: #666;
+    font-size: 2rem;
+    color: #ebebeb;
     margin-bottom: 2rem;
     line-height: 1.8;
-    max-width: 500px;
+    max-width: 900px;
   }
 }
 
@@ -179,5 +204,91 @@
   100% {
     opacity: 0;
     transform: translateY(10px);
+  }
+}
+
+/* 4K / Large Desktop */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .hero {
+    min-height: 88vh;
+    background-position: center;
+  }
+}
+
+/* Full HD+ Desktop */
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .hero {
+    min-height: 80vh;
+    background-position: center;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1440px) {
+  .hero {
+    min-height: 72vh;
+    background-position: center;
+  }
+}
+
+/* Small Laptop */
+@media (max-width: 1200px) {
+  .hero {
+    min-height: 60vh;
+    padding: 40px 18px;
+    background-position: 65% center;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hero {
+    min-height: 55vh;
+    padding: 36px 16px;
+    background-position: 68% center;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+    padding: 30px 14px;
+    background-position: 70% center;
+  }
+
+  .hero-image{
+      display: none;
+    }
+    
+    .description {
+      font-size: 1.3rem !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .hero {
+    min-height: 45vh;
+    padding: 26px 12px;
+    background-position: 72% center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 420px) {
+  .hero {
+    min-height: 42vh;
+    padding: 22px 10px;
+    background-position: 74% center;
+  }
+}
+
+/* Very Small Devices */
+@media (max-width: 320px) {
+  .hero {
+    min-height: 40vh;
+    padding: 18px 8px;
+    background-position: 76% center;
   }
 }

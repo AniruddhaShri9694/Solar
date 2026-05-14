@@ -8,31 +8,32 @@
     <div class="about-content">
       <div class="about-text fade-in">
         <p>
-          Sion Energy is India's leading solar energy company committed to making clean, renewable energy accessible to every home and business. With over 5 years of experience in the solar industry, we have empowered thousands of customers to achieve energy independence while reducing their carbon footprint.
+          Sion energy is a Emerging Solar energy company in versatile solar integration technology committed for making clean and renewable energy. Providing solar solutions to Homes , industries and commercials with our solar experts of over 10+ years of experience in solar industries
         </p>
         <p>
-          Our mission is simple: bring the power of the sun to every Indian home. We combine cutting-edge solar technology, expert installation, and exceptional after-sales service to deliver a seamless experience. Whether you're looking to reduce electricity bills or transition to sustainable energy, Sion Energy is your trusted partner.
+          Our mission is simple: To bring the power of sun to every Indian house. Through our technology, help India to become zero carbon emissions
         </p>
       </div>
 
-      <div class="stats-grid fade-in-down">
+      <!-- <div class="stats-grid fade-in-down">
         <div *ngFor="let stat of stats" class="stat-card">
           <h3>{{ stat.number }}</h3>
           <p>{{ stat.label }}</p>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="skills-section">
-      <h3>Our Expertise</h3>
+      <div class="section-header">
+        <h2>Our Expertise</h2>
+        <p>Comprehensive solar energy and renewable solutions</p>
+      </div>
       <div class="skills-grid">
-        <div *ngFor="let skill of skills" class="skill-item slide-in-left">
-          <div class="skill-header">
-            <span class="skill-name">{{ skill.name }}</span>
-            <span class="skill-percentage">{{ skill.level }}%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" [style.width.%]="skill.level"></div>
+        <div *ngFor="let offering of offerings" class="skill-item slide-in-left">
+          <div class="offering-card">
+            <div class="offering-icon">{{ offering.icon }}</div>
+            <h4>{{ offering.title }}</h4>
+            <p>{{ offering.description }}</p>
           </div>
         </div>
       </div>

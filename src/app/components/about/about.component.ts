@@ -16,12 +16,36 @@ export class AboutComponent {
     { number: '99%', label: 'Satisfaction Rate' }
   ];
 
-  skills = [
-    { name: 'Solar Technology', level: 95 },
-    { name: 'Installation Quality', level: 96 },
-    { name: 'Customer Service', level: 94 },
-    { name: 'Energy Efficiency', level: 92 },
-    { name: 'After-Sales Support', level: 93 },
-    { name: 'Sustainability Focus', level: 97 }
+  offerings = [
+    {
+      icon: '☀️',
+      title: 'Solar Technology',
+      description: 'Our expert team visits your location and checks rooftop space, shadow area, and power usage to design the best solar solution for maximum savings.'
+    },
+    {
+      icon: '🏗️',
+      title: 'Installation Quality',
+      description: 'Get a professional 3D solar layout so you can clearly understand panel placement, structure design, and expected generation before installation.'
+    },
+    {
+      icon: '👥',
+      title: 'Customer Service',
+      description: 'We handle complete solar installation, net meter process, and government subsidy documentation for a smooth and hassle-free experience.'
+    },
+    {
+      icon: '⚡',
+      title: 'Energy Efficiency',
+      description: 'Start reducing your electricity bill from day one with high-efficiency solar systems designed for long-term performance and durability.'
+    },
+    {
+      icon: '🛠️',
+      title: 'After-Sales Support',
+      description: 'Our support team provides regular maintenance guidance and quick service support to keep your solar system running efficiently.'
+    },
+    {
+      icon: '🌱',
+      title: 'Sustainability Focus',
+      description: 'Quality products, professional installation, transparent pricing, and customer satisfaction make Sion Energy a trusted choice for solar solutions.'
+    }
   ];
 }
