@@ -112,15 +112,15 @@
 }
 
 .contact-btn {
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #1e90ff, #0047ab);
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+    background: linear-gradient(135deg, #1e90ff, #0047ab);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
 
   &:hover {
     transform: translateY(-2px);
@@ -289,7 +289,34 @@
   }
 }
 
+.whatsapp-btn {
+  background: #25D366 !important;
+  color: white;
+  border: none;
 
-.radio-group input,.checkbox-group input {
-  width: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.whatsapp-btn i {
+  font-size: 26px;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  background-color: #1ebe5d;
+}
+
+.section-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }

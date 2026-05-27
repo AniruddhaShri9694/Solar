@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -18,46 +19,119 @@ export class ContactComponent {
   message = '';
   submitted = false;
 
-  sendEmail(): void {
-    if (this.email) {
-      // Open Gmail with pre-filled email
-      const subject = 'Sion Energy - Solar Solution Inquiry';
-      const body = `Name: ${this.name}\nEmail: ${this.contactEmail}\n\nMessage:\n${this.message}`;
-      const gmailUrl = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${this.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(gmailUrl, '_blank');
-    }
-  }
+  fullName = '';
+societyName = '';
+pinCode = '';
+whatsappNumber = '';
+agmApprovalStatus = '';
+electricityBill = '';
+designation = '';
 
-  handleSubmit(): void {
-    if (this.name && this.contactEmail && this.message) {
-      this.sendEmail();
-      this.submitted = true;
-      this.resetForm();
-      setTimeout(() => {
-        this.submitted = false;
-      }, 3000);
-    }
-  }
+googleScriptURL = "https://script.google.com/macros/s/AKfycbx608eX6DwL2OzrZ9my-Csncf6dcTh7AHIFo4jCdvg3QwKM_DB8eahNi4PAqkmEwjYH2w/exec"
 
-  resetForm(): void {
-    this.name = '';
-    this.contactEmail = '';
-    this.message = '';
-  }
+constructor(private http: HttpClient) {}
 
-  makeCall(): void {
-    if (this.phone) {
-      window.location.href = `tel:${this.phone}`;
-    }
-  }
+ sendEmail(): void {
+  if (this.email) {
 
-  openEmail(): void {
-    const subject = 'Hello! I am interested in your Solar Energy services';
-    const gmailUrl = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${this.email}&su=${encodeURIComponent(subject)}`;
+    const subject = 'Sion Energy - Free Solar Quote Request';
+
+    const body = `Full Name: ${this.fullName}
+
+Housing Society Name: ${this.societyName}
+
+PIN Code: ${this.pinCode}
+
+WhatsApp Number: ${this.whatsappNumber}
+
+${this.agmApprovalStatus ? `AGM Approval Status: ${this.agmApprovalStatus}` : ''}
+
+${this.electricityBill ? `Monthly Electricity Bill: ${this.electricityBill}` : ''}
+
+${this.designation ? `Designation in Society: ${this.designation}` : ''}
+    `;
+
+    const gmailUrl =
+      `https://mail.google.com/mail/u/0/?view=cm&fs=1` +
+      `&to=${this.email}` +
+      `&su=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
+
     window.open(gmailUrl, '_blank');
   }
+}
 
-  openInstagram(): void {
-    window.open('https://www.instagram.com/sion_energy_solar/', '_blank');
+handleSubmit(): void {
+  if (
+    this.fullName &&
+    this.societyName &&
+    this.pinCode &&
+    this.whatsappNumber
+  ) {
+    this.saveToGoogleSheet();
+    this.sendEmail();
+
+    this.submitted = true;
+
+    this.resetForm();
+
+    setTimeout(() => {
+      this.submitted = false;
+    }, 3000);
   }
+}
+
+resetForm(): void {
+  this.fullName = '';
+  this.societyName = '';
+  this.pinCode = '';
+  this.whatsappNumber = '';
+  this.agmApprovalStatus = '';
+  this.electricityBill = '';
+  this.designation = '';
+}
+
+saveToGoogleSheet(): void {
+
+  const payload = {
+
+    secret: 'SION_SOLAR_2026',
+
+    fullName: this.fullName,
+    societyName: this.societyName,
+    pinCode: this.pinCode,
+    whatsappNumber: this.whatsappNumber,
+    agmApprovalStatus: this.agmApprovalStatus,
+    electricityBill: this.electricityBill,
+    designation: this.designation
+
+  };
+
+  fetch(this.googleScriptURL, {
+
+    method: 'POST',
+
+    mode: 'no-cors',
+
+    headers: {
+      'Content-Type': 'text/plain'
+    },
+
+    body: JSON.stringify(payload)
+
+  })
+  .then(() => {
+
+    console.log('Saved to Google Sheet');
+
+  })
+  .catch((error) => {
+
+    console.error('Google Sheet Error', error);
+
+  });
+
+}
+ 
+
 }

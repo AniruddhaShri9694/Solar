@@ -6,77 +6,153 @@
     </div>
 
     <div class="contact-wrapper">
-      <div class="contact-info fade-in">
-        <div class="info-card">
-          <div class="info-icon">📧</div>
-          <h3>Email</h3>
-          <p>{{ email }}</p>
-          <button class="contact-btn" (click)="openEmail()">Send Email</button>
-        </div>
-
-        <div class="info-card">
-          <div class="info-icon">📱</div>
-          <h3>Phone</h3>
-          <p>{{ phone }}</p>
-          <!-- <button class="contact-btn" (click)="makeCall()">Call Now</button> -->
-        </div>
-
-        <div class="info-card">
-          <div class="info-icon">🌐</div>
-          <h3>Follow Us</h3>
-          <div class="social-links">
-            <!-- <a href="#" class="social-link">Facebook</a> -->
-            <button type="button" class="social-link" (click)="openInstagram()" title="Visit our Instagram">Instagram</button>
-            <!-- <a href="#" class="social-link">LinkedIn</a> -->
-          </div>
-        </div>
-      </div>
 
       <form class="contact-form fade-in-down" (ngSubmit)="handleSubmit()">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input
-            type="text"
-            id="name"
-            [(ngModel)]="name"
-            name="name"
-            placeholder="Enter your name"
-            required
-          />
-        </div>
 
-        <div class="form-group">
-          <label for="email-input">Your Email</label>
-          <input
-            type="email"
-            id="email-input"
-            [(ngModel)]="contactEmail"
-            name="email"
-            placeholder="Enter your email"
-            required
-          />
-        </div>
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              [(ngModel)]="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
 
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            [(ngModel)]="message"
-            name="message"
-            placeholder="Tell us about your solar energy needs..."
-            rows="5"
-            required
-          ></textarea>
-        </div>
+          <!-- Housing Society Name -->
+          <div class="form-group">
+            <label for="societyName">Name of the Housing Society</label>
+            <input
+              type="text"
+              id="societyName"
+              [(ngModel)]="societyName"
+              name="societyName"
+              placeholder="Enter society name"
+              required
+            />
+          </div>
 
-        <button type="submit" class="btn submit-btn" [disabled]="!name || !contactEmail || !message">
-          Send Message
-        </button>
+          <!-- PIN Code -->
+          <div class="form-group">
+            <label for="pinCode">PIN Code</label>
+            <input
+              type="text"
+              id="pinCode"
+              [(ngModel)]="pinCode"
+              name="pinCode"
+              placeholder="Enter PIN code"
+              maxlength="6"
+              pattern="[0-9]{6}"
+              inputmode="numeric"
+              required
+            />
+          </div>
 
-        <div *ngIf="submitted" class="success-message">
-          ✓ Message sent! We'll get back to you soon.
-        </div>
-      </form>
+          <!-- WhatsApp Number -->
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number</label>
+            <input
+              type="tel"
+              id="whatsapp"
+              [(ngModel)]="whatsappNumber"
+              name="whatsappNumber"
+              placeholder="Enter WhatsApp number"
+              required
+              maxlength="15"
+            />
+          </div>
+
+          <!-- AGM Approval Status -->
+          <div class="form-group">
+            <label for="agmStatus">AGM Approval Status</label>
+            <select
+              id="agmStatus"
+              [(ngModel)]="agmApprovalStatus"
+              name="agmApprovalStatus"
+              required
+            >
+              <option value="" disabled selected>Select AGM Status</option>
+              <option value="Approved">Approved</option>
+              <option value="Pending">Pending</option>
+              <option value="Not Discussed">Not Discussed</option>
+            </select>
+          </div>
+
+          <!-- Monthly Electricity Bill -->
+          <div class="form-group">
+            <label>Monthly Electricity Bill</label>
+
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="electricityBill"
+                  [(ngModel)]="electricityBill"
+                  value="0 - ₹50,000"
+                />
+                0 - ₹50,000
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="electricityBill"
+                  [(ngModel)]="electricityBill"
+                  value="₹50,000 - ₹2 Lacs"
+                />
+                ₹50,000 - ₹2 Lacs
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="electricityBill"
+                  [(ngModel)]="electricityBill"
+                  value="Above ₹2 Lacs"
+                />
+                Above ₹2 Lacs
+              </label>
+            </div>
+          </div>
+
+          <!-- Designation -->
+          <div class="form-group">
+            <label for="designation">What is your Designation in the Society?</label>
+
+            <select
+              id="designation"
+              [(ngModel)]="designation"
+              name="designation"
+              required
+            >
+              <option value="" disabled selected>Select Designation</option>
+              <option value="Management Committee Member">
+                Management Committee Member
+              </option>
+              <option value="Resident">Resident</option>
+              <option value="Builder">Builder</option>
+              <option value="Facility Manager">Facility Manager</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="btn submit-btn"
+            [disabled]="
+              !fullName ||
+              !societyName ||
+              !pinCode ||
+              !whatsappNumber
+            "
+          >
+            Get Free Quote
+          </button>
+
+        </form>
     </div>
   </div>
 </section>
