@@ -107,6 +107,13 @@
   }
 }
 
+@media (max-width: 1200px) {
+  /* Hide the Send Email button on small devices */
+  .contact-btn.send-email {
+    display: none !important;
+  }
+}
+
 .social-links {
   display: flex;
   justify-content: center;

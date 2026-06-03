@@ -7,11 +7,11 @@
 
     <div class="contact-wrapper">
       <div class="contact-info fade-in">
-        <div class="info-card">
+          <div class="info-card">
           <div class="info-icon">📧</div>
           <h3>Email</h3>
           <p>{{ email }}</p>
-          <button class="contact-btn" (click)="openEmail()">Send Email</button>
+          <button class="contact-btn send-email" (click)="openEmail()">Send Email</button>
         </div>
 
         <div class="info-card">
@@ -20,7 +20,7 @@
           <p>{{ phone }}</p>
 
           <div class="section-wrapper">
-              <button class="contact-btn" (click)="makeCall()">
+              <button class="contact-btn" style="transform: rotate(90deg);" (click)="makeCall()">
                 <i class="fas fa-phone-alt"></i>
                 </button>
     

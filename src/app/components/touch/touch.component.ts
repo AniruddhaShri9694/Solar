@@ -15,7 +15,7 @@ export class TouchComponent {
   
   makeCall(): void {
     if (this.phone) {
-      window.location.href = `tel:${this.phone}`;
+      globalThis.location.href = `tel:${this.phone}`;
     }
   }
 
@@ -26,17 +26,16 @@ export class TouchComponent {
   }
 
   openInstagram(): void {
-    window.open('https://www.instagram.com/sion_energy_solar/', '_blank');
+    globalThis.open('https://www.instagram.com/sion_energy_solar/', '_blank', 'noopener,noreferrer');
   }
 
   openWhatsApp(): void {
+    const message =
+      'Hello Sion Energy, I would like to know more about your solar solutions for our society.';
 
-  const message =
-    'Hello Sion Energy, I would like to know more about your solar solutions for our society.';
+    const whatsappUrl =
+      `https://wa.me/${this.phone}?text=${encodeURIComponent(message)}`;
 
-  const whatsappUrl =
-    `https://wa.me/${this.phone}?text=${encodeURIComponent(message)}`;
-
-  window.open(whatsappUrl, '_blank');
-}
+    globalThis.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  }
 }

@@ -8,6 +8,7 @@
     <div class="contact-wrapper">
 
       <form class="contact-form fade-in-down" (ngSubmit)="handleSubmit()">
+        <div class="form-grid">
 
           <!-- Full Name -->
           <div class="form-group">
@@ -74,7 +75,7 @@
               name="agmApprovalStatus"
               required
             >
-              <option value="" disabled selected>Select AGM Status</option>
+              <option value="" selected>Select AGM Status</option>
               <option value="Approved">Approved</option>
               <option value="Pending">Pending</option>
               <option value="Not Discussed">Not Discussed</option>
@@ -82,8 +83,8 @@
           </div>
 
           <!-- Monthly Electricity Bill -->
-          <div class="form-group">
-            <label>Monthly Electricity Bill</label>
+          <div class="form-group full-width">
+            <div class="field-label">Monthly Electricity Bill</div>
 
             <div class="radio-group">
               <label>
@@ -128,7 +129,7 @@
               name="designation"
               required
             >
-              <option value="" disabled selected>Select Designation</option>
+              <option value="" selected>Select Designation</option>
               <option value="Management Committee Member">
                 Management Committee Member
               </option>
@@ -137,6 +138,7 @@
               <option value="Facility Manager">Facility Manager</option>
             </select>
           </div>
+        </div>
 
           <!-- Submit Button -->
           <button
