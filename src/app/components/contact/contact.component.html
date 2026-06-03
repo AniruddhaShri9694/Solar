@@ -82,9 +82,29 @@
             </select>
           </div>
 
-          <!-- Monthly Electricity Bill -->
+          <!-- Designation -->
+          <div class="form-group">
+            <label for="designation">What is your Designation in the Society?</label>
+
+            <select
+              id="designation"
+              [(ngModel)]="designation"
+              name="designation"
+              required
+            >
+              <option value="" selected>Select Designation</option>
+              <option value="Management Committee Member">
+                Management Committee Member
+              </option>
+              <option value="Resident">Resident</option>
+              <option value="Builder">Builder</option>
+              <option value="Facility Manager">Facility Manager</option>
+            </select>
+          </div>
+
+           <!-- Monthly Electricity Bill -->
           <div class="form-group full-width">
-            <div class="field-label">Monthly Electricity Bill</div>
+            <label for="agmStatus">Monthly Electricity Bill</label>
 
             <div class="radio-group">
               <label>
@@ -118,26 +138,6 @@
               </label>
             </div>
           </div>
-
-          <!-- Designation -->
-          <div class="form-group">
-            <label for="designation">What is your Designation in the Society?</label>
-
-            <select
-              id="designation"
-              [(ngModel)]="designation"
-              name="designation"
-              required
-            >
-              <option value="" selected>Select Designation</option>
-              <option value="Management Committee Member">
-                Management Committee Member
-              </option>
-              <option value="Resident">Resident</option>
-              <option value="Builder">Builder</option>
-              <option value="Facility Manager">Facility Manager</option>
-            </select>
-          </div>
         </div>
 
           <!-- Submit Button -->
@@ -149,6 +149,7 @@
               !societyName ||
               !pinCode ||
               !whatsappNumber
+              || whatsappNumber.length < 10
             "
           >
             Get Free Quote
