@@ -8,20 +8,18 @@ import { ToastService } from '../../services/toast.service';
   imports: [CommonModule],
   template: `
     <div class="toast-container">
-      @for (toast of toastService.toasts(); track toast.id) {
-        <div class="toast" [class]="'toast-' + toast.type">
-          <div class="toast-icon">
-            @switch (toast.type) {
-              @case ('success') { ✓ }
-              @case ('error') { ✕ }
-              @case ('info') { ℹ }
-              @case ('warning') { ⚠ }
-            }
-          </div>
-          <div class="toast-message">{{ toast.message }}</div>
-          <button class="toast-close" (click)="toastService.removeToast(toast.id)">×</button>
+      <div *ngFor="let toast of toastService.toasts()" class="toast" [class]="'toast-' + toast.type">
+        <div class="toast-icon">
+          <ng-container [ngSwitch]="toast.type">
+            <span *ngSwitchCase="'success'">✓</span>
+            <span *ngSwitchCase="'error'">✕</span>
+            <span *ngSwitchCase="'info'">ℹ</span>
+            <span *ngSwitchCase="'warning'">⚠</span>
+          </ng-container>
         </div>
-      }
+        <div class="toast-message">{{ toast.message }}</div>
+        <button class="toast-close" (click)="toastService.removeToast(toast.id)">×</button>
+      </div>
     </div>
   `,
   styles: [`
@@ -56,7 +54,7 @@ import { ToastService } from '../../services/toast.service';
       @media (max-width: 768px) {
         padding: 14px 16px;
         font-size: 13px;
-        max-width: 100%;
+        max-width: calc(100% - 40px);
       }
     }
 
