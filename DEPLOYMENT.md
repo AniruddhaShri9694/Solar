@@ -1,81 +1,35 @@
-# Deployment Guide for Food Portfolio Website
+# Deployment Guide for GoDaddy
 
-This guide will help you deploy your portfolio to the internet for free on Vercel.
-
-## 🚀 Quickest Method: Vercel (Recommended)
+This Angular website is a static site. Build it locally, then upload the generated files to the GoDaddy hosting document root.
 
 ### Prerequisites
-- GitHub account
-- Your code pushed to GitHub
-- Vercel account (free)
+- A GoDaddy hosting plan connected to the purchased domain
+- Access to GoDaddy cPanel or File Manager
+- Node.js 18 or newer on the computer used to build the site
 
 ### Step-by-Step Deployment
 
-#### 1. **Prepare Your Code**
+#### 1. **Build the Website**
 ```bash
-# Build the project locally first to ensure no errors
 npm install
 npm run build:prod
 ```
 
-#### 2. **Push to GitHub**
-```bash
-git init
-git add .
-git commit -m "Initial portfolio commit"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/food-portfolio.git
-git push -u origin main
-```
+The files to upload are inside `dist/portfolio/`. Upload the contents of that folder, including `.htaccess`, not the folder itself.
 
-#### 3. **Deploy on Vercel**
-1. Go to [vercel.com](https://vercel.com)
-2. Click "Sign Up" and use GitHub
-3. Authorize Vercel
-4. Click "New Project"
-5. Select your repository
-6. Configure:
-   - **Framework**: Angular
-   - **Build Command**: `npm run build:prod`
-   - **Output Directory**: `dist/portfolio`
-   - **Root Directory**: `./`
+#### 2. **Open the GoDaddy Hosting Files**
+1. Sign in to GoDaddy and open **My Products**.
+2. Open **Web Hosting** and choose **Manage** for the hosting plan.
+3. Open **cPanel Admin** or **File Manager**.
+4. Open the document root for the purchased domain. This is commonly `public_html/` for the primary domain, or a domain-specific folder for an additional domain.
 
-7. Click "Deploy"
-8. **Wait 2-5 minutes** ⏳
-9. Your site is live! 🎉
+#### 3. **Upload the Production Files**
+1. Back up or remove existing files in the domain's document root if this is a new site.
+2. Upload every file and folder from `dist/portfolio/` into that document root.
+3. Confirm that `index.html` and `.htaccess` are directly inside the document root.
+4. Visit the domain over HTTPS and test the page on desktop and mobile.
 
-### Your Live URL
-```
-https://food-portfolio-xxxxx.vercel.app
-```
-
----
-
-## 📋 Alternative Methods
-
-### Firebase Hosting
-```bash
-npm install -g firebase-tools
-firebase login
-firebase init hosting
-# Select "dist/portfolio" as public directory
-npm run build:prod
-firebase deploy
-```
-
-### Netlify (Drag & Drop)
-1. Go to [netlify.com](https://netlify.com)
-2. Sign up
-3. **Drag and drop** `dist/portfolio` folder
-4. Site goes live instantly!
-
-### GitHub Pages
-```bash
-npm install --save-dev angular-cli-ghpages
-ng build --base-href "/portfolio/"
-ngh --dir=dist/portfolio
-# Your site: https://username.github.io/portfolio
-```
+GoDaddy's File Manager may hide files beginning with a dot. Enable **Show Hidden Files** before checking `.htaccess`. FTP users can upload it with FileZilla.
 
 ---
 
@@ -91,19 +45,11 @@ ngh --dir=dist/portfolio
 
 ---
 
-## 🔧 Custom Domain (Optional)
+## 🌐 Domain and HTTPS
 
-### Connect Your Domain on Vercel
-1. Go to Vercel Project Settings
-2. Click "Domains"
-3. Add your domain (foodportfolio.com, etc.)
-4. Add DNS records as shown
-5. Done! ✅
+If the domain and hosting are in GoDaddy, connect the domain to the hosting plan and use the document root assigned to that domain. If the domain was purchased in another GoDaddy account, the account owner must grant hosting or DNS access, or point the domain's DNS records to the hosting plan.
 
-### Free Domain Options
-- **Freenom**: freenom.com (free .tk, .ml, etc.)
-- **Vercel**: Free .vercel.app subdomain included
-- **Netlify**: Free .netlify.app subdomain included
+Enable GoDaddy's SSL certificate for the domain, then enable HTTPS redirect if available. DNS and SSL changes can take time to propagate.
 
 ---
 
@@ -133,12 +79,15 @@ Ready to cater your next event or learn more about our services?
 
 ## 🆘 Troubleshooting
 
-### Build Fails on Vercel
-**Solution**: Check your `dist/portfolio` folder exists locally:
+### Build Fails
+**Solution**: Check that `dist/portfolio` is created locally:
 ```bash
 npm run build:prod
-ls dist/portfolio/
+dir dist\portfolio
 ```
+
+### 404 Errors on Routes
+**Solution**: Upload the generated `.htaccess` file to the same folder as `index.html`. It is included automatically in `dist/portfolio/` by the Angular build.
 
 ### Email Button Not Working
 **Solution**: Ensure user is logged into Gmail before clicking
@@ -167,7 +116,7 @@ npm run build:prod -- --stats-json
 
 ## 🎯 Performance Tips
 
-1. **Enable Compression** on Vercel (automatic)
+1. **Enable Compression** in GoDaddy/cPanel if available
 2. **Use CDN** (Vercel handles this)
 3. **Optimize Images** (use .webp)
 4. **Lazy Load** components
@@ -177,16 +126,7 @@ npm run build:prod -- --stats-json
 
 ## 📊 Monitor Your Site
 
-### Vercel Analytics
-1. Go to Vercel Dashboard
-2. Select your project
-3. Check "Analytics" tab
-4. View:
-   - Pageviews
-   - Response time
-   - Error rates
-
-### Add More Monitoring
+### Add Monitoring
 - Google Analytics
 - Hotjar (heatmaps)
 - LogRocket (session replay)
@@ -195,7 +135,7 @@ npm run build:prod -- --stats-json
 
 ## 🔐 Security
 
-- ✅ HTTPS enabled (Vercel auto)
+- ✅ HTTPS enabled through GoDaddy SSL
 - ✅ Environment variables hidden
 - ✅ No API keys exposed
 - ✅ Regular backups (GitHub)

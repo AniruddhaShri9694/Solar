@@ -102,19 +102,14 @@ projects = [
 npm run build:prod
 ```
 
-### 2. Push to GitHub
+### 2. Upload to GoDaddy
 ```bash
-git add .
-git commit -m "Portfolio ready"
-git push
+npm run build:prod
 ```
 
-### 3. Deploy on Vercel
-- Go to [vercel.com](https://vercel.com)
-- Import your GitHub repo
-- It auto-deploys! ✅
+Upload the contents of `dist/portfolio/` to the GoDaddy domain's document root, commonly `public_html/`. Include the hidden `.htaccess` file alongside `index.html`.
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed guide.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for the detailed GoDaddy guide.
 
 ---
 
