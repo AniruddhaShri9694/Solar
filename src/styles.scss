@@ -1,3 +1,10 @@
+:root {
+  --theme-primary: rgba(24, 56, 95, 1);
+  --theme-primary-deep: rgba(12, 31, 52, 1);
+  --theme-primary-soft: rgba(24, 56, 95, 0.12);
+  --theme-primary-strong: rgba(24, 56, 95, 0.22);
+}
+
 /* Global Styles */
 * {
   margin: 0;
@@ -10,8 +17,8 @@ body {
   width: 100%;
   height: 100%;
   font-family: system-ui,'Poppins';
-  background: linear-gradient(135deg, #0d0d0e, #1c190f85);
-  color: #ffffff;
+  background: linear-gradient(135deg, #edf4fb, #dfeaf5);
+  color: var(--theme-primary);
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -32,18 +39,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1e90ff, #0047ab);
+  background: linear-gradient(180deg, rgba(24, 56, 95, 1), rgba(12, 31, 52, 1));
   border-radius: 5px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background: linear-gradient(180deg, #0047ab, #003380);
+    background: linear-gradient(180deg, rgba(12, 31, 52, 1), rgba(7, 19, 32, 1));
   }
 }
 
 /* Selection Styling */
 ::selection {
-  background-color: #1e90ff;
+  background-color: rgba(24, 56, 95, 1);
   color: white;
 }
 
@@ -57,8 +64,8 @@ body {
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  background: linear-gradient(135deg, #1e90ff, #0047ab);
-  color: white;
+  background: var(--theme-primary);
+  color: #ffffff;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
@@ -68,7 +75,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(24, 56, 95, 0.25);
 
   &:hover {
     transform: translateY(-2px);
@@ -81,14 +88,14 @@ body {
 
   &.btn-outline {
     background: transparent;
-    border: 2px solid #1e90ff;
-    color: #1e90ff;
+    border: 2px solid var(--theme-primary);
+    color: var(--theme-primary);
     box-shadow: none;
 
     &:hover {
-      background: #1e90ff;
+      background: var(--theme-primary);
       color: white;
-      box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(24, 56, 95, 0.25);
     }
   }
 
@@ -105,7 +112,7 @@ body {
 /* Heading Styles */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--theme-primary);
   margin-bottom: 1rem;
 }
 
@@ -282,9 +289,9 @@ section {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(30, 144, 255, 0.2);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 50%;
-  color: #1e90ff;
+  color: rgba(24, 56, 95, 1);
   text-decoration: none;
   font-weight: 700;
   font-size: 1.2rem;
@@ -298,10 +305,10 @@ section {
   min-height: 44px;
 
   &:hover {
-    background: #1e90ff;
+    background: rgba(24, 56, 95, 1);
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(24, 56, 95, 0.25);
   }
 
   &:active {
@@ -319,3 +326,8 @@ section {
 .social-icon-imagesss{
       width: 60px;
 }
+
+  .logo-image{
+    width: 5rem;
+    vertical-align: top;
+  }

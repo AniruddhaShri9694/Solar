@@ -15,6 +15,10 @@ export class FooterComponent {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
+
+    globalThis.setTimeout(() => {
+      globalThis.dispatchEvent(new Event('scroll'));
+    }, 200);
   }
 
   scrollToSection(sectionId: string): void {

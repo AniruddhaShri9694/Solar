@@ -8,8 +8,8 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0d0d0e, #1c190f85);
-  color: #ffffff;
+  background: linear-gradient(135deg, #edf4fb, #dfeaf5);
+  color: rgba(24, 56, 95, 1);
   scroll-behavior: smooth;
 }
 
@@ -22,15 +22,15 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e90ff;
+  background: rgba(24, 56, 95, 1);
   border-radius: 4px;
 
   &:hover {
-    background: #0047ab;
+    background: rgba(12, 31, 52, 1);
   }
 }
 
 ::selection {
-  background-color: #1e90ff;
+  background-color: rgba(24, 56, 95, 1);
   color: white;
 }
