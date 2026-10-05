@@ -29,7 +29,21 @@ export class ContactComponent {
   
   googleScriptURL = "https://script.google.com/macros/s/AKfycbx608eX6DwL2OzrZ9my-Csncf6dcTh7AHIFo4jCdvg3QwKM_DB8eahNi4PAqkmEwjYH2w/exec"
 
-  private toastService = inject(ToastService);
+  private readonly toastService = inject(ToastService);
+
+  onWhatsappKeydown(event: KeyboardEvent): void {
+    const allowedKeys = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End', 'Escape'];
+    const isDigit = /^\d$/.test(event.key);
+
+    if (!isDigit && !allowedKeys.includes(event.key)) {
+      event.preventDefault();
+    }
+  }
+
+  onWhatsappInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.whatsappNumber = input.value.replace(/\D/g, '').slice(0, 13);
+  }
 
   handleSubmit(): void {
     if (

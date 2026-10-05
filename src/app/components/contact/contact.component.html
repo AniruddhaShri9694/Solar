@@ -63,6 +63,10 @@
               placeholder="Enter WhatsApp number"
               required
               maxlength="15"
+              pattern="[0-9]*"
+              inputmode="numeric"
+              (keydown)="onWhatsappKeydown($event)"
+              (input)="onWhatsappInput($event)"
             />
           </div>
 
@@ -112,9 +116,9 @@
                   type="radio"
                   name="electricityBill"
                   [(ngModel)]="electricityBill"
-                  value="0 - ₹50,000"
+                  value="0 - 1K"
                 />
-                0 - ₹50,000
+                0 - 1K
               </label>
 
               <label>
@@ -122,9 +126,9 @@
                   type="radio"
                   name="electricityBill"
                   [(ngModel)]="electricityBill"
-                  value="₹50,000 - ₹2 Lacs"
+                  value="1 - 3K"
                 />
-                ₹50,000 - ₹2 Lacs
+                1 - 3K
               </label>
 
               <label>
@@ -132,9 +136,9 @@
                   type="radio"
                   name="electricityBill"
                   [(ngModel)]="electricityBill"
-                  value="Above ₹2 Lacs"
+                  value="Above 3K"
                 />
-                Above ₹2 Lacs
+                Above 3K
               </label>
             </div>
           </div>
